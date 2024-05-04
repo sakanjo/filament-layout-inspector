@@ -1,0 +1,59 @@
+{
+    "name": "sakanjo/filament-layout-inspector",
+    "description": "Visually examine the layout of your Filament app.",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "plugins",
+        "filament-plugins"
+    ],
+    "authors": [
+        {
+            "name": "Salah Kanjo",
+            "email": "dev.salah.kanjo@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "filament/filament": "^3.2",
+        "spatie/laravel-package-tools": "^1.16"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.1",
+        "orchestra/testbench": "^9.0",
+        "pestphp/pest": "^2.3",
+        "phpstan/phpstan": "^1.1",
+        "pestphp/pest-plugin-livewire": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "SaKanjo\\FilamentLayoutInspector\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SaKanjo\\FilamentLayoutInspector\\Tests\\": "tests/src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SaKanjo\\FilamentLayoutInspector\\FilamentLayoutInspectorServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": [
+            "@php vendor/bin/pint --test",
+            "@php vendor/bin/phpstan",
+            "@php vendor/bin/pest --parallel"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
